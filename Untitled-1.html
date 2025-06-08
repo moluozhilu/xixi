@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热门应用官网导航</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#add8e6',
+                        secondary: '#f5ccd4',
+                        accent: '#165DFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .app-card {
+                @apply bg-secondary/70 rounded-xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-white/30;
+            }
+            .app-card-icon {
+                @apply w-14 h-14 flex items-center justify-center rounded-lg mb-4;
+            }
+            .app-card-title {
+                @apply text-xl font-bold text-gray-800 mb-2;
+            }
+            .app-card-desc {
+                @apply text-gray-600 text-sm mb-4;
+            }
+            .app-card-btn {
+                @apply inline-flex items-center justify-center px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors duration-300 text-sm font-medium;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-primary/50 min-h-screen font-sans">
+    <!-- 页面头部 -->
+    <header class="bg-gradient-to-r from-primary to-primary/70 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center mb-4 md:mb-0">
+                <i class="fa fa-globe text-3xl mr-3"></i>
+                <h1 class="text-2xl md:text-3xl font-bold">热门应用官网导航</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="搜索应用..."
+                        class="py-2 px-4 pr-10 rounded-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-accent">
+                    <i class="fa fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <button
+                    class="hidden md:block py-2 px-4 bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-300">
+                    <i class="fa fa-star-o mr-2"></i>收藏
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 分类导航 -->
+        <div class="mb-10">
+            <div class="flex overflow-x-auto pb-2 space-x-3 hide-scrollbar">
+                <button class="bg-accent text-white px-6 py-2 rounded-full whitespace-nowrap">全部应用</button>
+                <button
+                    class="bg-white text-gray-700 px-6 py-2 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors duration-300">社交聊天</button>
+                <button
+                    class="bg-white text-gray-700 px-6 py-2 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors duration-300">视频娱乐</button>
+                <button
+                    class="bg-white text-gray-700 px-6 py-2 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors duration-300">工具软件</button>
+                <button
+                    class="bg-white text-gray-700 px-6 py-2 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors duration-300">办公学习</button>
+                <button
+                    class="bg-white text-gray-700 px-6 py-2 rounded-full whitespace-nowrap hover:bg-gray-100 transition-colors duration-300">游戏平台</button>
+            </div>
+        </div>
+
+        <!-- 应用网格 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- 微信 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-green-500 text-white">
+                    <i class="fa fa-weixin text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">微信</h3>
+                <p class="app-card-desc">一款为智能终端提供即时通讯服务的免费应用程序，支持跨通信运营商、跨操作系统平台通过网络快速发送免费（需消耗少量网络流量）语音短信、视频、图片和文字。</p>
+                <a href="https://weixin.qq.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- QQ -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-blue-500 text-white">
+                    <i class="fa fa-qq text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">QQ</h3>
+                <p class="app-card-desc">腾讯QQ是腾讯公司推出的一款基于互联网的即时通信软件，支持在线聊天、视频通话、点对点断点续传文件、共享文件、网络硬盘、自定义面板、QQ邮箱等多种功能。</p>
+                <a href="https://im.qq.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 抖音 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-black text-white">
+                    <i class="fa fa-music text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">抖音</h3>
+                <p class="app-card-desc">抖音是一款音乐创意短视频社交软件，是一个专注年轻人的15秒音乐短视频社区。用户可以通过这款软件选择歌曲，拍摄15秒的音乐短视频，形成自己的作品。</p>
+                <a href="https://www.douyin.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 微博 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-red-500 text-white">
+                    <i class="fa fa-weibo text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">微博</h3>
+                <p class="app-card-desc">微博是基于用户关系的社交媒体平台，用户可以通过PC、手机等多种移动终端接入，以文字、图片、视频等多媒体形式，实现信息的即时分享、传播互动。</p>
+                <a href="https://weibo.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 淘宝 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-orange-500 text-white">
+                    <i class="fa fa-shopping-cart text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">淘宝</h3>
+                <p class="app-card-desc">淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立。淘宝网是中国深受欢迎的网购零售平台，拥有近5亿的注册用户数。</p>
+                <a href="https://www.taobao.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 支付宝 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-blue-600 text-white">
+                    <i class="fa fa-credit-card text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">支付宝</h3>
+                <p class="app-card-desc">支付宝是中国领先的第三方支付平台，致力于为用户提供"简单、安全、快速"的支付解决方案。旗下有"支付宝"与"支付宝钱包"两个独立品牌。</p>
+                <a href="https://www.alipay.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 网易云音乐 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-red-600 text-white">
+                    <i class="fa fa-headphones text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">网易云音乐</h3>
+                <p class="app-card-desc">网易云音乐是一款由网易开发的音乐产品，是网易杭州研究院的成果，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。</p>
+                <a href="https://music.163.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- B站 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-pink-500 text-white">
+                    <i class="fa fa-play-circle text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">哔哩哔哩</h3>
+                <p class="app-card-desc">哔哩哔哩（B站）是中国年轻世代高度聚集的文化社区和视频平台，该网站于2009年6月26日创建，被粉丝们亲切地称为"B站"。</p>
+                <a href="https://www.bilibili.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 百度 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-blue-700 text-white">
+                    <i class="fa fa-search text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">百度</h3>
+                <p class="app-card-desc">百度是拥有强大互联网基础的领先AI公司，百度愿景是：成为最懂用户，并能帮助人们成长的全球顶级高科技公司。</p>
+                <a href="https://www.baidu.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 腾讯视频 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-blue-400 text-white">
+                    <i class="fa fa-film text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">腾讯视频</h3>
+                <p class="app-card-desc">腾讯视频是中国领先的在线视频平台，拥有丰富的内容资源和强大的技术能力，为用户提供高清、流畅、丰富的视频娱乐体验。</p>
+                <a href="https://v.qq.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 爱奇艺 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-red-400 text-white">
+                    <i class="fa fa-television text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">爱奇艺</h3>
+                <p class="app-card-desc">爱奇艺是拥有海量、优质、高清的网络视频的大型视频网站，专业的网络视频播放平台。爱奇艺影视内容丰富多元，涵盖了电影、电视剧等。</p>
+                <a href="https://www.iqiyi.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- 小红书 -->
+            <div class="app-card group">
+                <div class="app-card-icon bg-red-500 text-white">
+                    <i class="fa fa-book text-2xl"></i>
+                </div>
+                <h3 class="app-card-title">小红书</h3>
+                <p class="app-card-desc">小红书是一个生活方式平台和消费决策入口，创始人为毛文超和瞿芳。小红书通过机器学习对海量信息和人进行精准、高效匹配。</p>
+                <a href="https://www.xiaohongshu.com/" target="_blank" class="app-card-btn">
+                    <span>访问官网</span>
+                    <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- 加载更多 -->
+        <div class="mt-12 text-center">
+            <button
+                class="py-3 px-8 bg-white text-gray-700 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <i class="fa fa-refresh mr-2"></i>加载更多应用
+            </button>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-4 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">热门应用官网导航</h3>
+                    <p class="text-gray-400 text-sm">汇集当下热门应用软件官网，一键跳转，方便快捷。</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">关于我们</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">网站介绍</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">联系方式</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">加入我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">帮助中心</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">使用指南</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">常见问题</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">关注我们</h3>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-red-500 transition-colors duration-300">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2025 热门应用官网导航 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 卡片悬停效果增强
+        document.querySelectorAll('.app-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.classList.add('shadow-xl');
+                this.classList.add('bg-secondary');
+            });
+            card.addEventListener('mouseleave', function () {
+                this.classList.remove('shadow-xl');
+                this.classList.remove('bg-secondary');
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
